@@ -36,4 +36,25 @@ describe("Foo", function(){
             }); 
         });
     });
+    
+    describe("#isRich", function(){
+       describe("a foo with 3 things", function(){
+          var foo;
+          beforeEach(function(){
+             foo = new Foo('xyz', [2,3,4]); 
+          });
+          it("isRich is true", function(){
+              expect(foo.isRich()).toEqual(true);
+          }); 
+       }); 
+       describe("a foo with 2 things", function(){
+          var foo;
+          beforeEach(function(){
+             foo = new Foo('xyz', [1,2]); 
+          });
+          it("isRich is false", function(){
+              expect(foo.isRich()).toEqual(false);
+          }); 
+       }); 
+    });
 });
